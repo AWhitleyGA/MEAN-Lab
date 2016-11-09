@@ -1,0 +1,17 @@
+<h1>{{vm.post.title}}</h1>
+<p>{{vm.post.author}}</p>
+<p>{{vm.post.createdAt}}</p>
+<p>{{vm.post.body}}</p>
+
+<h2>Comments</h2>
+<div data-ng-repeat="comment in vm.post.comments">
+  <h3>{{comment.author}}</h3>
+  <p>{{comment.body}}</p>
+</div>
+
+<h2>Add New Comment</h2>
+<form data-ng-submit="vm.update()">
+  <input type="text" data-ng-model="vm.newComment.author" placeholder="Author">
+  <input type="text" data-ng-model="vm.newComment.body" placeholder="Body">
+  <button type="submit">Add Comment</button>
+</form>

@@ -1,0 +1,12 @@
+<div ng-repeat="post in vm.posts">
+  <a data-ui-sref="postShow({id: post._id})">{{post.title}}</a>
+  <p>Posted By: {{post.author}}</p>
+  <i>Created At: {{post.createdAt}}</i>
+</div>
+
+<form data-ng-submit="vm.create()">
+  <input type="text" data-ng-model="vm.newPost.title" placeholder="Title">
+  <input type="text" data-ng-model="vm.newPost.author" placeholder="Author">
+  <input type="text" data-ng-model="vm.newPost.body" placeholder="Body">
+  <button type="submit">Create Post</button>
+</form>
